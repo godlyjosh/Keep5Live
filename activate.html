@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keep5Live - Active Mode</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container-activated">
@@ -43,10 +44,10 @@
             <div class="news-flash">
                 <h2>Keep5Live Running for:</h2>
                 <div class="timer-container">
-                    <svg class="timer-svg" width="150" height="150">
-                        <circle class="timer-bg" cx="75" cy="75" r="70" stroke="#ddd" stroke-width="10" fill="none"/>
-                        <circle class="timer-progress" cx="75" cy="75" r="70" stroke="#00ff7f" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-90 75 75)" stroke-dasharray="439.82" stroke-dashoffset="439.82"/>
-                        <text id="timerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="24">00:00:00</text>
+                    <svg class="timer-svg" width="200" height="200">
+                        <circle class="timer-bg" cx="100" cy="100" r="90" stroke="#444" stroke-width="10" fill="none"/>
+                        <circle class="timer-progress" cx="100" cy="100" r="90" stroke="#ff9900" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-90 100 100)" stroke-dasharray="565.48" stroke-dashoffset="565.48"/>
+                        <text id="timerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="24">00:00:00</text>
                     </svg>
                 </div>
 
@@ -58,22 +59,51 @@
                 </div>
             </div>
 
-            <!-- Right Side for Donations -->
+            <!-- Right Side for Donations and Optional Puzzle Game -->
             <div class="right-side">
                 <h2>Support Our Cause</h2>
                 <a href="https://ko-fi.com/yourpage" target="_blank" class="donate-btn">
                     <img src="https://ko-fi.com/img/cdn/kofi1.png" alt="Buy Me a Coffee">
                 </a>
+
+                <h2>Optional Puzzle Game</h2>
+                <button class="btn-secondary" onclick="openPuzzle()">Play Puzzle</button>
             </div>
         </div>
 
         <footer>
             <p>&copy; 2024 Keep5Live. Part of Godid Group LLC. All Rights Reserved.</p>
         </footer>
-    </div>
 
-    <!-- Include JS for news feed and timer -->
-    <script src="scripts/news.js"></script>
-    <script src="scripts/timer.js"></script>
+        <!-- Puzzle Game Modal -->
+        <div id="puzzleModal" class="puzzle-container" role="dialog" aria-labelledby="puzzleTitle" aria-modal="true">
+            <button class="close-puzzle" onclick="closePuzzle()">&times;</button>
+            <h2 id="puzzleTitle">Sliding Puzzle</h2>
+            <div id="puzzle" class="puzzle">
+                <!-- 15 Tiles -->
+                <div data-pos="0,0">1</div>
+                <div data-pos="0,1">2</div>
+                <div data-pos="0,2">3</div>
+                <div data-pos="0,3">4</div>
+                <div data-pos="1,0">5</div>
+                <div data-pos="1,1">6</div>
+                <div data-pos="1,2">7</div>
+                <div data-pos="1,3">8</div>
+                <div data-pos="2,0">9</div>
+                <div data-pos="2,1">10</div>
+                <div data-pos="2,2">11</div>
+                <div data-pos="2,3">12</div>
+                <div data-pos="3,0">13</div>
+                <div data-pos="3,1">14</div>
+                <div data-pos="3,2">15</div>
+                <div data-pos="3,3"></div> <!-- Empty Tile -->
+            </div>
+        </div>
+
+        <!-- Include JS for news feed, timer, and puzzle game -->
+        <script src="scripts/news.js"></script>
+        <script src="scripts/timer.js"></script>
+        <script src="scripts/puzzle.js"></script>
+    </div>
 </body>
 </html>
