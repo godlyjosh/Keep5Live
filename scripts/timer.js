@@ -1,4 +1,5 @@
-// Timer functionality
+// scripts/timer.js
+
 let startTime = Date.now();
 
 // Function to format time (HH:MM:SS)
@@ -19,7 +20,17 @@ function updateTimer() {
     const currentTime = Date.now();
     const duration = currentTime - startTime;
 
-    document.getElementById('timer').textContent = formatTime(duration);
+    const formattedTime = formatTime(duration);
+    document.getElementById('timerText').textContent = formattedTime;
+
+    // Update circular progress
+    const progressCircle = document.querySelector('.timer-progress');
+    const totalSeconds = 86400; // 24 hours in seconds
+    const elapsedSeconds = Math.floor(duration / 1000);
+    const percentage = (elapsedSeconds % totalSeconds) / totalSeconds;
+    const offset = 439.82 * (1 - percentage); // 2 * Math.PI * r = 2 * 3.14 * 70 ≈ 439.82
+
+    progressCircle.style.strokeDashoffset = offset;
 }
 
 // Start the timer and update every second
