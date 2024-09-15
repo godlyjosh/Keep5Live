@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep5Live - Stay Active, Stay Secure</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Reference SVG Logo -->
+            <img src="assets/images/logo.svg" alt="Keep5Live Logo" class="logo">
+            <nav>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Keep5Live - Stay Active, Stay Secure</h1>
+            <p>Prevent your computer from locking with Keep5Live. Our service simulates user activity to ensure your screen stays active.</p>
+
+            <!-- Activate Button -->
+            <button class="animate-btn" onclick="openPopup()">Activate Keep5Live</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Keep5Live. Part of Godid Group LLC. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Pop-up modal for Terms and Conditions -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2>Terms & Conditions</h2>
+                <p>By using Keep5Live, you agree to the terms and conditions and understand that ads and donation options will be shown to support the service.</p>
+                <p><a href="terms.html" target="_blank">Read Full Terms and Conditions</a></p>
+
+                <label for="agree">
+                    <input type="checkbox" id="agree"> I agree to the terms and conditions and understand that ads will be displayed.
+                </label>
+                <br><br>
+                <a href="activate.html"><button class="animate-btn" id="activateBtn" disabled>Activate Keep5Live</button></a>
+            </div>
+        </div>
+
+        <!-- Include JS for pop-up functionality -->
+        <script src="scripts/main.js"></script>
+    </div>
+</body>
+</html>
