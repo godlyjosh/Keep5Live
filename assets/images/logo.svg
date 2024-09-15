@@ -1,18 +1,40 @@
-<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-  <!-- Shield Background -->
-  <defs>
-    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00aaff"/>
-      <stop offset="100%" stop-color="#1a1a1a"/>
-    </linearGradient>
-  </defs>
-  <polygon points="60,10 20,30 10,70 20,110 60,130 100,110 110,70 100,30" fill="url(#shieldGradient)" stroke="#00aaff" stroke-width="2" rx="10" ry="10"/>
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blocks of 5 -->
+  <g id="blocks">
+    <!-- Block 1 -->
+    <rect x="15" y="15" width="30" height="30" fill="#ff9900" />
+    <rect x="15" y="60" width="30" height="30" fill="#ff9900" />
+    <rect x="15" y="105" width="30" height="30" fill="#ff9900" />
+    
+    <!-- Block 2 -->
+    <rect x="60" y="15" width="30" height="30" fill="#ff9900" />
+    <rect x="60" y="60" width="30" height="30" fill="#ff9900" />
+    <rect x="60" y="105" width="30" height="30" fill="#ff9900" />
+    
+    <!-- Block 3 -->
+    <rect x="105" y="15" width="30" height="30" fill="#ff9900" />
+    <rect x="105" y="60" width="30" height="30" fill="#ff9900" />
+    <rect x="105" y="105" width="30" height="30" fill="#ff9900" />
+  </g>
+  
+  <!-- Alive Indicator -->
+  <circle cx="75" cy="75" r="60" stroke="#ffffff" stroke-width="5" fill="none"/>
+  <circle cx="75" cy="75" r="55" stroke="#ff9900" stroke-width="5" fill="none" stroke-dasharray="345.58" stroke-dashoffset="345.58" transform="rotate(-90 75 75)" />
 
-  <!-- Power Button Symbol -->
-  <circle cx="60" cy="70" r="20" fill="#ffffff" opacity="0.9"/>
-  <circle cx="60" cy="70" r="15" fill="#00aaff"/>
-  <path d="M60 55 L60 40" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <!-- Dynamic Lines to Indicate Activity -->
+  <line x1="75" y1="15" x2="75" y2="30" stroke="#ff9900" stroke-width="5" stroke-linecap="round">
+    <animate attributeName="y2" values="30;15;30" dur="1s" repeatCount="indefinite" />
+  </line>
+  <line x1="75" y1="135" x2="75" y2="120" stroke="#ff9900" stroke-width="5" stroke-linecap="round">
+    <animate attributeName="y2" values="120;135;120" dur="1s" repeatCount="indefinite" />
+  </line>
+  <line x1="15" y1="75" x2="30" y2="75" stroke="#ff9900" stroke-width="5" stroke-linecap="round">
+    <animate attributeName="x2" values="30;15;30" dur="1s" repeatCount="indefinite" />
+  </line>
+  <line x1="135" y1="75" x2="120" y2="75" stroke="#ff9900" stroke-width="5" stroke-linecap="round">
+    <animate attributeName="x2" values="120;135;120" dur="1s" repeatCount="indefinite" />
+  </line>
   
   <!-- Brand Text -->
-  <text x="60" y="115" font-family="Inter, sans-serif" font-size="14" fill="#333" text-anchor="middle">Keep5Live</text>
+  <text x="75" y="145" font-family="Roboto, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle">Keep5Live</text>
 </svg>
