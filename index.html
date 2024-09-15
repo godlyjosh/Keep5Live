@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keep5Live - Stay Active, Stay Secure</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -21,7 +22,7 @@
         <main>
             <div class="hero">
                 <h1>Keep5Live</h1>
-                <p>Prevent your computer from locking with Keep5Live. Our service simulates user activity to ensure your screen stays active.</p>
+                <p>Ensure your computer stays active without manual intervention. Activate Keep5Live and maintain uninterrupted productivity.</p>
                 <button class="btn-primary" onclick="openPopup()">Activate Keep5Live</button>
             </div>
         </main>
@@ -40,6 +41,12 @@
                 <label for="agree">
                     <input type="checkbox" id="agree"> I agree to the terms and conditions and understand that ads will be displayed.
                 </label>
+                
+                <label for="durationInput" class="duration-label">
+                    Set Awake Duration (Minutes, max 180):
+                    <input type="number" id="durationInput" min="1" max="180" value="60">
+                </label>
+
                 <br><br>
                 <button class="btn-primary" id="activateBtn" disabled onclick="activateKeep5Live()">Activate Keep5Live</button>
             </div>
