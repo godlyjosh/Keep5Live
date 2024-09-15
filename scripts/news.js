@@ -1,3 +1,5 @@
+// scripts/news.js
+
 // Simulated news feed (replace this with API calls later)
 const techNews = [
     "Apple announces new iPhone 15 with groundbreaking features.",
@@ -22,10 +24,9 @@ function displayNews() {
     let currentIndex = 0;
 
     setInterval(() => {
-        newsList.scrollTo({
-            top: (currentIndex++ % newsList.childElementCount) * 30, // Adjust scroll speed
-            behavior: 'smooth'
-        });
+        currentIndex = (currentIndex + 1) % techNews.length;
+        newsList.style.transform = `translateY(-${currentIndex * 40}px)`; // Adjust scroll speed and height
+        newsList.style.transition = 'transform 0.5s ease-in-out';
     }, 4000); // Change every 4 seconds
 }
 
