@@ -1,13 +1,13 @@
 /* assets/css/style.css */
 
-/* Importing Inter Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f5f7; /* Light gray background for modern feel */
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background: #121212; /* Dark background */
+    color: #ffffff; /* White text for contrast */
     margin: 0;
     padding: 0;
 }
@@ -24,41 +24,47 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    border-bottom: 1px solid #333;
 }
 
 header .logo {
-    width: 120px; /* Increased size for better visibility */
+    width: 150px;
     height: auto;
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #555;
-    font-weight: 600;
+    color: #ff9900; /* Orange accent */
+    font-weight: 700;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #00aaff; /* Blue accent on hover */
+    color: #ffa31a; /* Lighter orange on hover */
 }
 
 /* Hero Section Styling */
 .hero {
     text-align: center;
-    padding: 100px 0;
+    padding: 150px 0;
+    background: linear-gradient(135deg, #ff9900, #ffcc66);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(255, 153, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #00aaff;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #555;
+    color: #ffffff;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -66,24 +72,47 @@ nav a:hover {
 
 .btn-primary {
     padding: 15px 30px;
-    background-color: #00aaff;
+    background-color: #ff9900;
     border: none;
     border-radius: 30px;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #0088cc;
-    transform: translateY(-2px);
+    background-color: #ffa31a;
+    transform: translateY(-3px);
 }
 
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #ffa31a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styling */
@@ -91,7 +120,7 @@ footer {
     margin-top: 60px;
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #333;
     color: #777;
     font-size: 14px;
 }
@@ -104,37 +133,37 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
 .popup-content {
-    background: #fff;
+    background: #1f1f1f;
     padding: 40px;
     max-width: 500px;
     width: 90%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.5);
     text-align: center;
-    animation: fadeIn 0.4s ease;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 .popup-content h2 {
     margin-bottom: 20px;
-    color: #00aaff;
+    color: #ff9900;
 }
 
 .popup-content p {
     margin-bottom: 20px;
-    color: #555;
+    color: #ccc;
 }
 
 .popup-content a {
-    color: #00aaff;
+    color: #ff9900;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .popup-content a:hover {
@@ -145,7 +174,7 @@ footer {
     display: block;
     margin-bottom: 20px;
     font-size: 16px;
-    color: #333;
+    color: #fff;
 }
 
 .popup-content input[type="checkbox"] {
@@ -153,30 +182,73 @@ footer {
     transform: scale(1.2);
 }
 
+.duration-label {
+    color: #fff;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.popup-content input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: rotate(-90deg) scale(1); }
+    50% { transform: rotate(-90deg) scale(1.05); }
+    100% { transform: rotate(-90deg) scale(1); }
 }
 
 /* Activated Page Styling */
+.container-activated header {
+    border-bottom: 1px solid #333;
+}
+
 .content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 40px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .left-side, .right-side {
     flex: 1;
-    background: #fff;
+    background: #1f1f1f;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(255, 153, 0, 0.3);
+    color: #fff;
+}
+
+.news-flash {
+    flex: 2;
+    text-align: center;
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(255, 153, 0, 0.3);
+    color: #fff;
 }
 
 .left-side h2, .right-side h2, .news-flash h2 {
-    color: #00aaff;
+    color: #ff9900;
     margin-bottom: 15px;
 }
 
@@ -184,11 +256,10 @@ footer {
     height: 250px;
     overflow: hidden;
     position: relative;
-}
-
-.news-flash {
-    flex: 2;
-    text-align: center;
+    border: 2px solid #ff9900;
+    border-radius: 10px;
+    padding: 10px;
+    background: #333;
 }
 
 .news-flash h2 {
@@ -204,26 +275,27 @@ footer {
 
 .timer-svg {
     transform: rotate(-90deg);
+    animation: pulse 3s infinite;
 }
 
 .timer-bg {
-    stroke: #eee;
+    stroke: #444;
 }
 
 .timer-progress {
-    stroke: #00aaff;
-    stroke-dasharray: 439.82;
-    stroke-dashoffset: 439.82;
+    stroke: #ff9900;
+    stroke-dasharray: 565.48; /* 2 * PI * 90 */
+    stroke-dashoffset: 565.48;
     transition: stroke-dashoffset 1s linear;
 }
 
 .news-box {
     max-height: 300px;
     overflow-y: auto;
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .news-box ul {
@@ -234,8 +306,8 @@ footer {
 
 .news-box li {
     padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-    color: #555;
+    border-bottom: 1px solid #444;
+    color: #ddd;
 }
 
 .news-box li:last-child {
@@ -251,81 +323,94 @@ footer {
     transform: scale(1.05);
 }
 
+/* Optional Puzzle Game Styling */
+.puzzle-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.5);
+    display: none;
+    z-index: 2000;
+}
+
+.puzzle-container h2 {
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+.puzzle-container .puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.puzzle-container .puzzle div {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.puzzle-container .puzzle div:hover {
+    background: #ff9900;
+}
+
+.close-puzzle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-puzzle:hover {
+    color: #ff9900;
+}
+
 /* Timer Text Styling */
 #timerText {
-    fill: #333;
+    fill: #ffffff;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .content {
-        flex-direction: column;
-    }
-
-    .left-side, .right-side, .news-flash {
-        width: 100%;
-    }
-
-    .ad-scroll-box {
-        height: 200px;
-    }
+/* Notification Styling */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3000;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .btn-primary {
-        font-size: 16px;
-        padding: 12px 25px;
-    }
-
-    .timer-container {
-        flex-direction: column;
-    }
-
-    .timer-svg {
-        width: 120px;
-        height: 120px;
-    }
-
-    #timerText {
-        font-size: 20px;
-    }
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@media (max-width: 480px) {
-    header .logo {
-        width: 90px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .btn-primary {
-        width: 100%;
-        font-size: 16px;
-        padding: 12px 0;
-    }
-
-    .timer-svg {
-        width: 100px;
-        height: 100px;
-    }
-
-    #timerText {
-        font-size: 18px;
-    }
+/* Puzzle Game Specific Styling */
+#puzzle div.empty {
+    background: transparent;
+    cursor: default;
 }
