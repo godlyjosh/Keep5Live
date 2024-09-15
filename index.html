@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keep5Live - Stay Active, Stay Secure</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Reference SVG Logo -->
+            <!-- Modern SVG Logo -->
             <img src="assets/images/logo.svg" alt="Keep5Live Logo" class="logo">
             <nav>
                 <a href="terms.html">Terms & Conditions</a>
@@ -18,11 +19,11 @@
         </header>
 
         <main>
-            <h1>Keep5Live - Stay Active, Stay Secure</h1>
-            <p>Prevent your computer from locking with Keep5Live. Our service simulates user activity to ensure your screen stays active.</p>
-
-            <!-- Activate Button -->
-            <button class="animate-btn" onclick="openPopup()">Activate Keep5Live</button>
+            <div class="hero">
+                <h1>Keep5Live</h1>
+                <p>Prevent your computer from locking with Keep5Live. Our service simulates user activity to ensure your screen stays active.</p>
+                <button class="btn-primary" onclick="openPopup()">Activate Keep5Live</button>
+            </div>
         </main>
 
         <footer>
@@ -30,9 +31,9 @@
         </footer>
 
         <!-- Pop-up modal for Terms and Conditions -->
-        <div id="popup" class="popup">
+        <div id="popup" class="popup" role="dialog" aria-labelledby="popupTitle" aria-modal="true">
             <div class="popup-content">
-                <h2>Terms & Conditions</h2>
+                <h2 id="popupTitle">Terms & Conditions</h2>
                 <p>By using Keep5Live, you agree to the terms and conditions and understand that ads and donation options will be shown to support the service.</p>
                 <p><a href="terms.html" target="_blank">Read Full Terms and Conditions</a></p>
 
@@ -40,11 +41,11 @@
                     <input type="checkbox" id="agree"> I agree to the terms and conditions and understand that ads will be displayed.
                 </label>
                 <br><br>
-                <a href="activate.html"><button class="animate-btn" id="activateBtn" disabled>Activate Keep5Live</button></a>
+                <button class="btn-primary" id="activateBtn" disabled onclick="activateKeep5Live()">Activate Keep5Live</button>
             </div>
         </div>
 
-        <!-- Include JS for pop-up functionality -->
+        <!-- Include JS for pop-up functionality and wake lock -->
         <script src="scripts/main.js"></script>
     </div>
 </body>
