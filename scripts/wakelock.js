@@ -1,33 +1,32 @@
-// scripts/wakelock.js
+// scripts/main.js
 
 let wakeLock = null;
 
-// Function to request a wake lock
-async function requestWakeLock() {
+// Function to request Wake Lock
+async function activateKeep5Live() {
     try {
         wakeLock = await navigator.wakeLock.request('screen');
-        console.log('Wake Lock is active');
+        console.log('Wake Lock is active, system will not go idle.');
 
-        wakeLock.addEventListener('release', () => {
-            console.log('Wake Lock was released');
-        });
+        alert('Keep5Live activated! Your system will stay awake.');
     } catch (err) {
         console.error(`${err.name}, ${err.message}`);
+        alert('Error: Unable to activate Keep5Live.');
     }
 }
 
-// Request wake lock when the page loads
-window.addEventListener('load', () => {
-    if ('wakeLock' in navigator) {
-        requestWakeLock();
-    } else {
-        console.warn('Wake Lock API not supported by this browser.');
+// Function to release Wake Lock (optional, can be tied to session end)
+async function releaseWakeLock() {
+    if (wakeLock !== null) {
+        await wakeLock.release();
+        console.log('Wake Lock released.');
+        wakeLock = null;
     }
-});
+}
 
-// Re-request wake lock when the page becomes visible again
-document.addEventListener('visibilitychange', () => {
-    if (wakeLock !== null && document.visibilityState === 'visible') {
-        requestWakeLock();
+// Automatically try to release the lock when user navigates away (optional)
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && wakeLock !== null) {
+        releaseWakeLock();
     }
 });
